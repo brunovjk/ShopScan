@@ -37,3 +37,11 @@ ShopScan está licenciado sob a [Licença MIT](LICENSE).
 No futuro, planejamos adicionar recursos adicionais ao ShopScan.
 
 Suas contribuições e feedback são valiosos para moldar o futuro do ShopScan.
+
+## Nota Multilíngue | Multilingual Note:
+
+- Usuários/Colaboradores:
+Neste momento a documentação do ShopScan está disponível apenas em português. Nosso foco é resolver um problema comun de compras no Brasil. Agradecemos sua compreensão e agradecemos qualquer feedback enquanto continuamos a desenvolver o projeto.
+
+- Users/Contributors:
+At this time, ShopScan's documentation is available only in Portuguese. Our focus is on addressing a common shopping issues in Brazil. We appreciate your understanding and welcome any feedback as we continue to develop the project.
