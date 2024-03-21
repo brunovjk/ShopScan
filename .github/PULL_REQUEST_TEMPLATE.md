@@ -15,7 +15,7 @@
 
 - [ ] Verificação de não haver erros no console. Nenhum novo erro ou bug foi introduzido por esta PR
 
-### Checklist do Autor do PR
+### Checklist do Autor PR
 
 - [ ] O motivo da PR está correto e referenciado ao issue correspondente?
 - [ ] A forma como a PR resolve o problema está clara?
