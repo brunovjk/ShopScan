@@ -1,12 +1,12 @@
 ---
 name: ShopScan Issue Template
-about: Modelo para criação de um novo `issue` relacionado ao ShopScan
+about: Template para criação de um novo problema ou solicitação de nova funcionalidade no ShopScan
 ---
 
-## Descrição do Problema:
-Descreva o problema de forma clara e concisa.
+## Descrição do Problema ou Nova Funcionalidade:
+Descreva o problema ou a nova funcionalidade de forma clara e concisa.
 
-## Passos para Reproduzir:
+## Passos para Reproduzir (apenas para problemas):
 1. Passo 1
 2. Passo 2
 3. ...
@@ -14,23 +14,20 @@ Descreva o problema de forma clara e concisa.
 ## Comportamento Esperado:
 Descreva o que você esperava que acontecesse.
 
-## Comportamento Atual:
+## Comportamento Atual (se aplicável):
 Descreva o que realmente aconteceu.
 
-## Solução Sugerida:
+## Solução Sugerida (se aplicável):
 Se você tiver alguma ideia sobre como resolver o problema, por favor compartilhe.
 
-## Capturas de Tela:
-Se aplicável, adicione capturas de tela para ajudar na compreensão do problema.
+## Capturas de Tela (se aplicável):
+Adicione capturas de tela para ajudar na compreensão do problema.
 
 ## Contexto Adicional:
-Adicione qualquer contexto adicional sobre o problema aqui.
+Adicione qualquer contexto adicional sobre o problema ou nova funcionalidade aqui.
 
 ## Plataformas Afetadas:
-<!--- 
-Marque as plataformas que são afetadas por este problema
---->
-Quais de nossas plataformas oficialmente suportadas estão enfrentando este problema? Por favor, marque apenas se você tiver fornecido uma gravação de tela no tópico para cada plataforma:
+Quais das nossas plataformas oficialmente suportadas estão enfrentando este problema ou serão afetadas pela nova funcionalidade? Marque as opções correspondentes:
 - [ ] Web
 - [ ] Android
 - [ ] iOS
