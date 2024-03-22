@@ -1,8 +1,3 @@
----
-name: ShopScan Issue Template
-about: Template para criação de um novo problema ou solicitação de nova funcionalidade no ShopScan
----
-
 ## Descrição do Problema ou Nova Funcionalidade:
 Descreva o problema ou a nova funcionalidade de forma clara e concisa.
 
