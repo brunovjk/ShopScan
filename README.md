@@ -1,6 +1,6 @@
 # ShopScan
 
-**Descrição**: ShopScan é um companheiro inteligente de compras projetado para trazer precisão à sua experiência de compra. Diga adeus às discrepâncias de preços no caixa! Este aplicativo intuitivo permite que você capture facilmente etiquetas de preço usando reconhecimento de fotos. Crie e gerencie sua lista de compras de forma contínua, garantindo a precisão do custo de cada item. Na hora de pagar, o ShopScan exibe o total a pagar, garantindo que você pague exatamente o que espera. Boas compras! 🛒💳
+**Descrição**: ShopScan é Seu Companheiro Inteligente de Compras projetado para trazer **Precisão** à sua Compra. Diga adeus às Discrepâncias de Preços no Caixa! Este aplicativo intuitivo permite que você capture facilmente etiquetas de preço usando reconhecimento de fotos. Crie e gerencie sua lista de compras de forma contínua, garantindo a precisão do custo de cada item. Na hora de pagar, o ShopScan exibe o total a pagar, garantindo que você pague exatamente o que espera. Boas compras! 🛒💳
 
 ## Instalação
 
