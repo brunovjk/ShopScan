@@ -2,11 +2,14 @@
 
 ## Marca
 
-- [ ] Definir a Mensagem Principal da Marca
+- [x] Definir a Mensagem Principal da Marca
+
       - ShopScan: Precisão nas Compras.
       - Com ShopScan, sua experiência de compras nunca mais será a mesma. Nossa missão é proporcionar precisão e praticidade em cada compra que você realizar. Com nossa tecnologia intuitiva de reconhecimento de fotos, você pode dizer adeus às discrepâncias de preços no caixa. Crie e gerencie sua lista de compras com facilidade, sabendo exatamente quanto irá pagar no final. Com ShopScan, cada compra é uma experiência sem preocupações, garantindo que você pague exatamente o que espera.
-- [ ] Escolher Nome da Marca: ShopScan
-- [ ] Escrever Descrição da Marca
+- [x] Escolher Nome da Marca: ShopScan
+- [x] Escrever Descrição da Marca
+
+      - ShopScan é uma marca dedicada a simplificar e aprimorar a experiência de compras dos consumidores. Com um foco incansável na precisão e praticidade, buscamos eliminar as discrepâncias de preços no caixa e oferecer uma maneira intuitiva de criar e gerenciar listas de compras. Nosso compromisso com a inovação nos permite oferecer soluções eficientes e confiáveis, garantindo que nossos usuários saibam exatamente quanto irão pagar no momento do checkout. Com ShopScan, cada compra se torna uma experiência tranquila e sem complicações, permitindo que os clientes desfrutem ao máximo de suas atividades de compras.
 - [ ] Design do Logo
   - [ ] Escolher Estilo de Logo (Ex: Simbólico, Texto, Combinação)
   - [ ] Criar Versões Variadas do Logo (Ex: Principal, Secundária, Monocromática)
