@@ -12,6 +12,8 @@
       - ShopScan é uma marca dedicada a simplificar e aprimorar a experiência de compras dos consumidores. Com um foco incansável na precisão e praticidade, buscamos eliminar as discrepâncias de preços no caixa e oferecer uma maneira intuitiva de criar e gerenciar listas de compras. Nosso compromisso com a inovação nos permite oferecer soluções eficientes e confiáveis, garantindo que nossos usuários saibam exatamente quanto irão pagar no momento do checkout. Com ShopScan, cada compra se torna uma experiência tranquila e sem complicações, permitindo que os clientes desfrutem ao máximo de suas atividades de compras.
 - [ ] Design do Logo
   - [ ] Escolher Estilo de Logo (Ex: Simbólico, Texto, Combinação)
+  
+          - Um símbolo que represente a precisão, como um gráfico de barras estilizado, uma etiqueta de preço ou um carrinho de compras simplificado, pode ser integrado ao design. Além disso, incluir o nome "ShopScan" em uma fonte moderna e legível pode reforçar a identidade da marca e facilitar o reconhecimento. Dessa forma, uma combinação de elementos simbólicos e texto pode transmitir efetivamente a proposta de valor do ShopScan
   - [ ] Criar Versões Variadas do Logo (Ex: Principal, Secundária, Monocromática)
 - [ ] Escolher Paleta de Cores:
   - Verde: #52D17A
