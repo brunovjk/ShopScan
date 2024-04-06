@@ -14,14 +14,23 @@
   - [x] Escolher Estilo de Logo (Ex: Simbólico, Texto, Combinação)
   
           - Um símbolo que represente a precisão, como um gráfico de barras estilizado, uma etiqueta de preço ou um carrinho de compras simplificado, pode ser integrado ao design. Além disso, incluir o nome "ShopScan" em uma fonte moderna e legível pode reforçar a identidade da marca e facilitar o reconhecimento. Dessa forma, uma combinação de elementos simbólicos e texto pode transmitir efetivamente a proposta de valor do ShopScan
-    - [x] Slogan
+  - [x] Slogan
   
-          ShopScan: Precisão Garantida em Cada Compra.
+          - ShopScan: Precisão Garantida em Cada Compra.
   - [ ] Criar Versões Variadas do Logo (Ex: Principal, Secundária, Monocromática)
-- [ ] Escolher Paleta de Cores:
+       - [x] Base
+    
+    ![logo](https://github.com/brunovjk/ShopScan/assets/95647348/30cd5000-ed9f-4a03-bf8c-ddd7217d1a40)
+
+       - [ ] Principal
+       - [ ] Secundária
+       - [ ] Monocromática
+            
+- [x] Escolher Paleta de Cores:
   - Verde: #52D17A
   - Azul: #3F8EFF
   - Laranja: #FFA500
+    
 - [ ] Escolher Fontes:
   - [ ] Primária:
   - [ ] Secundária:
