@@ -21,10 +21,7 @@
            
       - [x] Base
             <details><summary>png</summary>![logo](https://github.com/brunovjk/ShopScan/assets/95647348/30cd5000-ed9f-4a03-bf8c-ddd7217d1a40)</details>
-            <details><summary>svg</summary> 
-![logo](https://github.com/brunovjk/ShopScan/assets/95647348/4f48986a-7454-439e-a4ed-e7c4b34b2098)
- </details>
-            
+            <details><summary>svg</summary>![logo](https://github.com/brunovjk/ShopScan/assets/95647348/4f48986a-7454-439e-a4ed-e7c4b34b2098)</details>
        - [ ] Principal
        - [ ] Secundária
        - [ ] Monocromática
