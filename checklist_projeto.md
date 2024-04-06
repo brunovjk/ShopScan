@@ -18,10 +18,10 @@
   
           - ShopScan: Precisão Garantida em Cada Compra.
   - [ ] Criar Versões Variadas do Logo (Ex: Principal, Secundária, Monocromática)
-       - [x] Base
-    
-    ![logo](https://github.com/brunovjk/ShopScan/assets/95647348/30cd5000-ed9f-4a03-bf8c-ddd7217d1a40)
-
+           
+      - [x] Base
+            <details><summary>png</summary>![logo](https://github.com/brunovjk/ShopScan/assets/95647348/30cd5000-ed9f-4a03-bf8c-ddd7217d1a40)</details>
+            
        - [ ] Principal
        - [ ] Secundária
        - [ ] Monocromática
