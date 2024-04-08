@@ -31,9 +31,19 @@
   - Azul: #3F8EFF
   - Laranja: #FFA500
     
-- [ ] Escolher Fontes:
-  - [ ] Primária:
-  - [ ] Secundária:
+- [x] Escolher Fontes:
+  - [x] Primária: **Montserrat**
+    - Logo
+    - Títulos e Cabeçalhos
+    - Menu de Navegação
+    - Botões de Chamada para Ação
+      
+  - [x] Secundária: **Roboto**
+    - Texto
+    - Subtítulos e Legendas
+    - Campos e Rótulos de Formulários
+    - Notificações e Alertas
+
 
 ## Design System
 
