@@ -21,13 +21,16 @@
            
       - [x] Base
             <details><summary>png</summary>![logo](https://github.com/brunovjk/ShopScan/assets/95647348/30cd5000-ed9f-4a03-bf8c-ddd7217d1a40)</details>
-            <details><summary>svg</summary>![logo](https://github.com/brunovjk/ShopScan/assets/95647348/4f48986a-7454-439e-a4ed-e7c4b34b2098)</details>
-       - [ ] Principal
-       - [ ] Secundária
-       - [ ] Monocromática
+       - [x] Icon:
+             [figma](https://www.figma.com/file/3m6xt4aIb66zcDF8L2VEqC/ShopScan---Design-System?type=design&node-id=2303-66&mode=design)
+       - [ ] Vertical
+       - [ ] Horixontal
             
 - [x] Escolher Paleta de Cores:
-  - Verde: #52D17A
+  - Verde: 
+        - Dark:
+        - Base: #1ca658
+        - Light: #52D17A
   - Azul: #3F8EFF
   - Laranja: #FFA500
     
