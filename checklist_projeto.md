@@ -18,13 +18,11 @@
   
           - ShopScan: Precisão Garantida em Cada Compra.
   - [ ] Criar Versões Variadas do Logo (Ex: Principal, Secundária, Monocromática)
-           
-      - [x] Base
-            <details><summary>png</summary>![logo](https://github.com/brunovjk/ShopScan/assets/95647348/30cd5000-ed9f-4a03-bf8c-ddd7217d1a40)</details>
-       - [x] Icon:
-             [figma](https://www.figma.com/file/3m6xt4aIb66zcDF8L2VEqC/ShopScan---Design-System?type=design&node-id=2303-66&mode=design)
-       - [ ] Vertical
-       - [ ] Horixontal
+     
+       - [x] Figma:  [Figma Logo](https://www.figma.com/file/3m6xt4aIb66zcDF8L2VEqC/ShopScan---Design-System?type=design&node-id=2303-66&mode=design) 
+       - [x] Icon: <details><summary>png</summary> ![image](https://github.com/brunovjk/ShopScan/assets/95647348/c630f347-9131-4d0e-a0cb-3014816db5bb) </details>
+       - [ ] Vertical:
+       - [ ] Horixontal:
             
 - [x] Escolher Paleta de Cores:
   - Verde: 
