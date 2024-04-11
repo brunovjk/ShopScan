@@ -56,5 +56,4 @@
 
 - [ ] Identificar Principais Fluxos de Usuário
 - [ ] Criar Wireframes das Telas Principais do Aplicativo
-- [ ] Usar Componentes do Design System para Construir os Wireframes
-- [ ] Revisar e Iterar os Wireframes conforme necessário
+- [ ] Usar Componentes do Design System para Construir os Prototipos
