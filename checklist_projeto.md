@@ -22,7 +22,7 @@
        - [x] Figma:  [Figma Logo](https://www.figma.com/file/3m6xt4aIb66zcDF8L2VEqC/ShopScan---Design-System?type=design&node-id=2303-66&mode=design) 
        - [x] Icon: <details><summary>png</summary> ![image](https://github.com/brunovjk/ShopScan/assets/95647348/c630f347-9131-4d0e-a0cb-3014816db5bb) </details>
        - [ ] Vertical:
-       - [ ] Horixontal:
+       - [x] Horixontal:
             
 - [x] Escolher Paleta de Cores:
   - Verde: 
