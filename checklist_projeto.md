@@ -48,7 +48,7 @@
 
 ## Design System
 
-- [ ] Escolher Framework de UI: React Native Paper
+- [X] Escolher Framework de UI: React Native Paper
 - [ ] Personalizar Temas e Estilos conforme a Paleta de Cores Escolhida
 - [ ] Integrar Componentes Prontos do React Native Paper
 
