@@ -54,7 +54,7 @@
 
 ## Wireframes
 
-- [ ] Identificar Principais Fluxos de Usuário
+- [x] Identificar Principais Fluxos de Usuário
    1. Abrir o aplicativo.
    2. Gerenciar Listas:
       - Mostrar listas existentes.
@@ -66,12 +66,186 @@
       - Remover itens da lista.
    4. Capturar Etiquetas:
       - Selecionar um item e tirar foto da etiqueta.
+      - Especificar a quantidade desejada.
       - Confirmar manualmente nome e preço se a etiqueta estiver ilegível.
    5. Visualizar Lista:
-      - Ver preço e nome do item após capturar a foto.
+      - Ver preço, nome e quantidade do item após capturar a foto.
       - Marcar ou desmarcar itens no carrinho.
       - Visualizar a foto tirada para cada item.
       - Visualizar total a pagar.
 
-- [ ] Criar Wireframes das Telas Principais do Aplicativo
+- [x] Criar Wireframes das Telas Principais do Aplicativo
+  - <details>
+    <summary>Tela Inicial:</summary>
+
+    ```
+ 
+    _________________________________
+    |      Listas de Compras        |
+    |-------------------------------|
+    |  - Lista de Compras A         |
+    |  - Lista de Compras B         |
+    |  - Lista de Compras C         |
+    |  - Lista de Compras D         |
+    |  - Lista de Compras E         |
+    |_______________________________|
+    |          [ + Adicionar Lista] |
+    |_______________________________|
+
+    ```
+ 
+    </details>
+  
+  - <details>
+    <summary>Tela de Lista de Compras:</summary>
+
+    ```
+ 
+    _________________________________
+    |        Minha Lista A          |
+    |-------------------------------|
+    |  - Maçãs  [Foto][Remover] [✓] |
+    |  - Pão    [Foto][Remover] [✓] |
+    |  - Leite  [Foto][Remover] [✓] |
+    |-------------------------------|
+    |         [Adicionar Item]      |
+    |_______________________________|
+    |  [Total a Pagar: R$ 10,00]    |
+    |_______________________________|
+
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Tela de Captura de Etiqueta:</summary>
+
+    ```
+    ___________________________________
+    |                                 |
+    |             [Foto]              |
+    |                                 |
+    |                                 |
+    |---------------------------------|
+    |           Tirar Foto            |
+    |_________________________________|
+
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Tela de Confirmação:</summary>
+
+    ```
+     __________________________________
+    |          Confirmação            |
+    |----- ---------------------------|
+    |  Nome: _____________________    |
+    |  Quantidade: _______________    |
+    |  Preço: _____________________   |
+    |_________________________________|
+    |    [Adicionar item a Lista]     |
+    |_________________________________|
+  
+
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Tela de Detalhes do Item:</summary>
+
+    ```
+ 
+    ___________________________________
+    |      Detalhes do Item           |
+    |---------------------------------|
+    |  Nome: Maçãs                    |
+    |  Quantidade: 2                  |
+    |  Preço Unitário: R$ 2,00        |
+    |_________________________________|
+    |[Remover][Verificar/Refazer Foto]|
+    |_________________________________|
+
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Tela de Captura de Etiqueta:</summary>
+
+    ```
+    ___________________________________
+    |                                 |
+    |             [Foto]              |
+    |                                 |
+    |                                 |
+    |---------------------------------|
+    |         Nome     Preco          |
+    |_________________________________|
+ 
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Histórico de Compras:</summary>
+ 
+    ```
+ 
+    _________________________________
+    |   Histórico de Compras        |
+    |-------------------------------|
+    |  - Compra 1                   |
+    |  - Compra 2                   |
+    |  - Compra 3                   |
+    |  - Compra 4                   |
+    |  - Compra 5                   |
+    |_______________________________|
+ 
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Tela de Tutorial:</summary>
+ 
+    ```
+ 
+    _________________________________
+    |           Tutorial            |
+    |-------------------------------|
+    | - Lorem Ipsum is simply dummy |
+    | text of the printing and      |
+    | typesetting industry. Lorem   |
+    | Ipsum has been the industry's |
+    | standard dummy text ever      |
+    | since the 1500s,              |
+    |_______________________________|
+ 
+    ```
+ 
+    </details>
+
+  - <details>
+    <summary>Tela de Política de Uso e Termos:</summary>
+ 
+    ```
+ 
+    _________________________________
+    |  Política de Uso e Termos     |
+    |-------------------------------|
+    | - Lorem Ipsum is simply dummy |
+    | text of the printing and      |
+    | typesetting industry. Lorem   |
+    | Ipsum has been the industry's |
+    | standard dummy text ever      |
+    | since the 1500s,              |
+    |_______________________________|
+ 
+    ```
+ 
+    </details>
+    
 - [ ] Usar Componentes do Design System para Construir os Prototipos
