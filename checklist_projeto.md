@@ -55,5 +55,23 @@
 ## Wireframes
 
 - [ ] Identificar Principais Fluxos de Usuário
+   1. Abrir o aplicativo.
+   2. Gerenciar Listas:
+      - Mostrar listas existentes.
+      - Limpar listas antigas.
+      - Criar uma nova lista de compras.
+      - Duplicar listas para reutilização.
+   3. Adicionar e Remover Itens:
+      - Adicionar itens à lista.
+      - Remover itens da lista.
+   4. Capturar Etiquetas:
+      - Selecionar um item e tirar foto da etiqueta.
+      - Confirmar manualmente nome e preço se a etiqueta estiver ilegível.
+   5. Visualizar Lista:
+      - Ver preço e nome do item após capturar a foto.
+      - Marcar ou desmarcar itens no carrinho.
+      - Visualizar a foto tirada para cada item.
+      - Visualizar total a pagar.
+
 - [ ] Criar Wireframes das Telas Principais do Aplicativo
 - [ ] Usar Componentes do Design System para Construir os Prototipos
