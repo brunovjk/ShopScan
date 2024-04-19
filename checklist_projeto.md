@@ -74,7 +74,7 @@
       - Visualizar a foto tirada para cada item.
       - Visualizar total a pagar.
 
-- [x] Criar Wireframes das Telas Principais do Aplicativo
+- [x] Criar Wireframes das Telas Principais do Aplicativo [Figma wireframe](https://www.figma.com/file/3m6xt4aIb66zcDF8L2VEqC/ShopScan---Design-System?type=design&node-id=2319-82&mode=design&t=ndshCwzmvZYke5h9-0)
   - <details>
     <summary>Tela Inicial:</summary>
 
