@@ -76,6 +76,13 @@
 
 - [x] Criar Wireframes das Telas Principais do Aplicativo [Figma wireframe](https://www.figma.com/file/3m6xt4aIb66zcDF8L2VEqC/ShopScan---Design-System?type=design&node-id=2319-82&mode=design&t=ndshCwzmvZYke5h9-0)
   - <details>
+    <summary>Tela Bem-vinda:</summary>
+
+     ![image](https://github.com/brunovjk/ShopScan/assets/95647348/5d45681d-c3d3-44fb-9684-7782a6501a13)
+
+    </details>
+    
+  - <details>
     <summary>Tela Inicial:</summary>
 
     ```
@@ -93,7 +100,9 @@
     |_______________________________|
 
     ```
- 
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/acdb73da-58eb-4376-a157-c36c08ada4d8)
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/be7f7598-f6f3-4171-a43f-2375906db5ca)
+
     </details>
   
   - <details>
@@ -114,7 +123,9 @@
     |_______________________________|
 
     ```
- 
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/73bb9f00-ee35-457c-ab6f-d92ed9307ae8)
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/13b90314-b689-4a36-8226-60b83ab7d0a7)
+
     </details>
 
   - <details>
