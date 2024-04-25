@@ -142,7 +142,8 @@
     |_________________________________|
 
     ```
- 
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/917c895f-009a-4a58-8a57-442a706988af)
+
     </details>
 
   - <details>
