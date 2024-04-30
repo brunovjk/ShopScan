@@ -233,7 +233,7 @@
     | typesetting industry. Lorem   |
     | Ipsum has been the industry's |
     | standard dummy text ever      |
-    | since the 1500s.              |
+    | since the 1500s,              |
     |_______________________________|
  
     ```
@@ -253,7 +253,7 @@
     | typesetting industry. Lorem   |
     | Ipsum has been the industry's |
     | standard dummy text ever      |
-    | since the 1500s.              |
+    | since the 1500s,              |
     |_______________________________|
  
     ```
