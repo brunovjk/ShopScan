@@ -185,23 +185,6 @@
     </details>
 
   - <details>
-    <summary>Tela de Captura de Etiqueta:</summary>
-
-    ```
-    ___________________________________
-    |                                 |
-    |             [Foto]              |
-    |                                 |
-    |                                 |
-    |---------------------------------|
-    |         Nome     Preco          |
-    |_________________________________|
- 
-    ```
- 
-    </details>
-
-  - <details>
     <summary>Histórico de Compras:</summary>
  
     ```
