@@ -162,6 +162,8 @@
   
 
     ```
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/12d4248b-87b5-491b-ba86-ccea4c4fe6c8)
+
  
     </details>
 
@@ -181,25 +183,8 @@
     |_________________________________|
 
     ```
- 
-    </details>
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/f63b5b49-2740-481e-8c19-8023a694276f)
 
-  - <details>
-    <summary>Histórico de Compras:</summary>
- 
-    ```
- 
-    _________________________________
-    |   Histórico de Compras        |
-    |-------------------------------|
-    |  - Compra 1                   |
-    |  - Compra 2                   |
-    |  - Compra 3                   |
-    |  - Compra 4                   |
-    |  - Compra 5                   |
-    |_______________________________|
- 
-    ```
  
     </details>
 
@@ -220,26 +205,8 @@
     |_______________________________|
  
     ```
- 
-    </details>
+    ![image](https://github.com/brunovjk/ShopScan/assets/95647348/7e27cb06-0aca-43d3-b635-b47d0f494a48)
 
-  - <details>
-    <summary>Tela de Política de Uso e Termos:</summary>
- 
-    ```
- 
-    _________________________________
-    |  Política de Uso e Termos     |
-    |-------------------------------|
-    | - Lorem Ipsum is simply dummy |
-    | text of the printing and      |
-    | typesetting industry. Lorem   |
-    | Ipsum has been the industry's |
-    | standard dummy text ever      |
-    | since the 1500s,              |
-    |_______________________________|
- 
-    ```
  
     </details>
     
