@@ -211,3 +211,53 @@
     </details>
     
 - [ ] Usar Componentes do Design System para Construir os Prototipos
+
+## MVP
+
+**1. Configuração do Projeto:**
+
+* [ ] Criar um novo projeto React Native.
+* [ ] Instalar as dependências necessárias:
+    * `react-native-paper`
+    * `react-native-onyx`
+    * `react-native-vision-camera`
+* [ ] Configurar o ambiente de desenvolvimento (emulador ou dispositivo físico).
+
+**2. Telas:**
+* **Tela de Bem-vinda:**
+    * [ ] Exibir uma mensagem de boas-vindas ao aplicativo.
+    * [ ] Apresentar um botão para iniciar o uso do aplicativo.
+* **Tela Inicial:**
+    * [ ] Exibir uma lista com as listas de compras existentes.
+    * [ ] Permitir a criação de novas listas de compras.
+    * [ ] Permitir a visualização e edição das listas existentes.
+    * [ ] Exibir um botão para adicionar novos itens à lista selecionada.
+* **Tela de Lista de Compras:**
+    * [ ] Exibir os itens da lista selecionada, incluindo nome, quantidade, preço e foto (se disponível).
+    * [ ] Permitir a adição de novos itens à lista.
+    * [ ] Permitir a edição dos itens da lista (nome, quantidade, preço).
+    * [ ] Permitir a remoção de itens da lista.
+    * [ ] Exibir o total a pagar da lista.
+* **Tela de Captura de Etiqueta:**
+    * [ ] Abrir a câmera do dispositivo para capturar a foto da etiqueta do produto.
+    * [ ] Permitir que o usuário ajuste a área de captura da foto.
+    * [ ] Tirar a foto da etiqueta e salvar em armazenamento local.
+* **Tela de Confirmação:**
+    * [ ] Exibir as informações do produto capturado (nome, preço, quantidade).
+    * [ ] Permitir que o usuário edite as informações do produto (opcional).
+    * [ ] Permitir que o usuário adicione o produto à lista de compras.
+* **Tela de Detalhes do Item:**
+    * [ ] Exibir as informações detalhadas do item da lista de compras (nome, quantidade, preço, foto).
+    * [ ] Permitir que o usuário edite as informações do item (opcional).
+    * [ ] Permitir que o usuário marque o item como comprado.
+    * [ ] Permitir que o usuário remova o item da lista.
+* **Tela de Tutorial:**
+    * [ ] Exibir um tutorial opcional para apresentar as funcionalidades básicas do aplicativo.
+
+**3. Implementação da Funcionalidade:**
+
+* [ ] Implementar a navegação entre as telas.
+* [ ] Implementar a lógica para gerenciamento de listas de compras (adicionar, editar, remover itens).
+* [ ] Implementar a lógica para captura de fotos de etiquetas e extração de informações (opcional).
+* [ ] Implementar a lógica para cálculo do total a pagar.
+* [ ] Implementar o armazenamento local de dados (listas de compras, itens).
