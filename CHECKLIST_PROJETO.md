@@ -219,6 +219,7 @@
 * [x] Criar um novo projeto React Native.
 * [ ] Instalar as dependências necessárias:
     * `react-native-paper`
+    * `react-native-vector-icons`
     * `react-native-onyx`
     * `react-native-vision-camera`
 * [ ] Configurar o ambiente de desenvolvimento (emulador ou dispositivo físico).
