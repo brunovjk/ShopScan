@@ -216,7 +216,7 @@
 
 **1. Configuração do Projeto:**
 
-* [ ] Criar um novo projeto React Native.
+* [x] Criar um novo projeto React Native.
 * [ ] Instalar as dependências necessárias:
     * `react-native-paper`
     * `react-native-onyx`
