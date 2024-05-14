@@ -222,7 +222,7 @@
     * [ ] `react-native-vector-icons`
     * [x] `react-native-onyx`
     * [ ] `react-native-camera`
-* [ ] Configurar o ambiente de desenvolvimento (emulador ou dispositivo físico).
+* [ ] Configurar o ambiente de desenvolvimento (emulador Android Studio ou dispositivo físico).
 
 **2. Telas:**
 * **Tela de Bem-vinda:**
