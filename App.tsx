@@ -2,7 +2,8 @@ import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Provider as PaperProvider, Button, Text } from 'react-native-paper';
 import Onyx, { useOnyx } from 'react-native-onyx';
-
+import { StatusBar } from 'expo-status-bar';
+  
 const ONYXKEYS = {
   COUNTER: 'counter',
 };
@@ -42,6 +43,7 @@ export default function App() {
           </>
         )}
       </View>
+      <StatusBar style="auto" />
     </PaperProvider>
   );
 }
@@ -53,3 +55,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+
+
+// import { StatusBar } from 'expo-status-bar';
+// import { StyleSheet, Text, View } from 'react-native';
+
+// export default function App() {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Open up App.tsx to start working on your app!</Text>
+//       <StatusBar style="auto" />
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
