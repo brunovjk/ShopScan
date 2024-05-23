@@ -219,15 +219,15 @@
 * [x] Criar um novo projeto React Native.
 * [ ] Instalar as dependências necessárias:
     * [x] `react-native-paper`.
-    * [x] `react-native-vector-icons`.
+    * [ ] `react-native-vector-icons`.
     * [x] `react-native-onyx`.
     * [ ] `react-native-camera`.
 * [ ] Configurar o ambiente de desenvolvimento (emulador Android Studio ou dispositivo físico).
 
 **2. Telas:**
 * **Tela de Bem-vinda:**
-    * [ ] Exibir uma mensagem de boas-vindas ao aplicativo.
-    * [ ] Apresentar um botão para iniciar o uso do aplicativo.
+    * [x] Exibir uma mensagem de boas-vindas ao aplicativo.
+    * [x] Apresentar um botão para iniciar o uso do aplicativo.
 * **Tela Inicial:**
     * [ ] Exibir uma lista com as listas de compras existentes.
     * [ ] Permitir a criação de novas listas de compras.
