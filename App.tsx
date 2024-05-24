@@ -3,27 +3,42 @@ import { View, StyleSheet } from 'react-native';
 import { Provider as PaperProvider, Button, Text } from 'react-native-paper';
 import Onyx, { useOnyx } from 'react-native-onyx';
 import { StatusBar } from 'expo-status-bar';
-  
-const ONYXKEYS = {
-  COUNTER: 'counter',
-};
 
-Onyx.init({ keys: ONYXKEYS });
+// const ONYXKEYS = {
+//   COUNTER: 'counter',
+// };
+
+// Onyx.init({ keys: ONYXKEYS });
 
 export default function App() {
-  const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
+  // const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
 
-  const value = (_value as { value: number })?.value;
-  const status = (_status as { status: 'loading' | 'loaded' })?.status;
+  const [counter, setCounter] = React.useState<{
+    value: number;
+    status: 'loading' | 'loaded';
+  }>({
+    value: 0,
+    status: 'loaded'
+  });
+  // const value = (_value as { value: number })?.value;
+  // const status = (_status as { status: 'loading' | 'loaded' })?.status;
 
   const incrementCount = () => {
-    if (status !== 'loaded') { return; }
-    Onyx.set(ONYXKEYS.COUNTER, { value: value + 1 });
+    if (counter.status !== 'loaded') { return; }
+    setCounter((prevState) => ({
+      ...prevState,
+      value: prevState.value + 1
+    }));
+    // Onyx.set(ONYXKEYS.COUNTER, { value: value + 1 });
   };
 
   const resetCount = () => {
-    if (status !== 'loaded') { return; }
-    Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
+    if (counter.status !== 'loaded') { return; }
+    setCounter((prevState) => ({
+      ...prevState,
+      value: 0
+    }));
+    // Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
   };
 
   return (
@@ -33,7 +48,7 @@ export default function App() {
           <Text>Loading counter...</Text>
         ) : (
           <>
-            <Text>Counter Value: {value}</Text>
+            <Text>Counter Value: {counter.value}</Text>
             <Button mode="contained" onPress={incrementCount}>
               Increment Counter
             </Button>
