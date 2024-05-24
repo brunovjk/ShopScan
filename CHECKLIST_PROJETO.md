@@ -226,8 +226,8 @@
 
 **2. Telas:**
 * **Tela de Bem-vinda:**
-    * [ ] Exibir uma mensagem de boas-vindas ao aplicativo.
-    * [ ] Apresentar um botão para iniciar o uso do aplicativo.
+    * [x] Exibir uma mensagem de boas-vindas ao aplicativo.
+    * [x] Apresentar um botão para iniciar o uso do aplicativo.
 * **Tela Inicial:**
     * [ ] Exibir uma lista com as listas de compras existentes.
     * [ ] Permitir a criação de novas listas de compras.
