@@ -220,7 +220,7 @@
 * [ ] Instalar as dependências necessárias:
     * [x] `react-native-paper`.
     * [ ] `react-native-vector-icons`.
-    * [x] `react-native-onyx`.
+    * [ ] `react-native-onyx`. (Having trouble on android)
     * [ ] `react-native-camera`.
 * [ ] Configurar o ambiente de desenvolvimento (emulador Android Studio ou dispositivo físico).
 
