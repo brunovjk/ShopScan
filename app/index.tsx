@@ -34,7 +34,7 @@ export default function App() {
         <View style={styles.container}>
           {/* {status === 'loading' ? (<Text style={styles.loadingText}>Loading counter...</Text>) : ( */}
           {/* <> */}
-          <Text style={styles.welcomeText}>Welcome to ShopScan</Text>
+          <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
           <View style={styles.counterContainer}>
             <MaterialIcons name="timer" size={32} color="#FFA500" />
             {/* <Text style={styles.counterText}>Counter Value: {value}</Text> */}
