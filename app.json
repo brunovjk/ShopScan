@@ -1,27 +1,50 @@
 {
   "expo": {
     "name": "ShopScan",
-    "slug": "shopscan",
+    "slug": "shopscana-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brunovjk.shopscanaapp"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.brunovjk.shopscanaapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "03fafb2c-5f6e-4e4c-9dbb-a615a9e693c0"
+      }
+    },
+    "owner": "brunovjk",
+    "updates": {
+      "url": "https://u.expo.dev/03fafb2c-5f6e-4e4c-9dbb-a615a9e693c0"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }

@@ -216,18 +216,18 @@
 
 **1. Configuração do Projeto:**
 
-* [x] Criar um novo projeto React Native.
+* [ ] Criar um novo projeto React Native com Typescript.
 * [ ] Instalar as dependências necessárias:
-    * [x] `react-native-paper`.
+    * [ ] `react-native-paper`.
     * [ ] `react-native-vector-icons`.
-    * [ ] `react-native-onyx`. (Having trouble on android) try to export to apk
+    * [ ] `react-native-onyx`.
     * [ ] `react-native-camera`.
-* [ ] Configurar o ambiente de desenvolvimento (emulador Android Studio ou dispositivo físico).
+* [ ] Configurar o ambiente de desenvolvimento (Android Studio e Xcode).
 
 **2. Telas:**
 * **Tela de Bem-vinda:**
-    * [x] Exibir uma mensagem de boas-vindas ao aplicativo.
-    * [x] Apresentar um botão para iniciar o uso do aplicativo.
+    * [ ] Exibir uma mensagem de boas-vindas ao aplicativo.
+    * [ ] Apresentar um botão para iniciar o uso do aplicativo.
 * **Tela Inicial:**
     * [ ] Exibir uma lista com as listas de compras existentes.
     * [ ] Permitir a criação de novas listas de compras.
