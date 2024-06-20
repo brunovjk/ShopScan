@@ -1,65 +1,68 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Provider as PaperProvider, Button, Text } from 'react-native-paper';
-// import Onyx, { useOnyx } from 'react-native-onyx';
+import Onyx, { useOnyx } from 'react-native-onyx';
 import { MaterialIcons } from '@expo/vector-icons';
 
-// const ONYXKEYS = {
-//   COUNTER: 'counter',
-// };
-
-// Onyx.init({
-//   keys: ONYXKEYS,
-// });
-
 export default function App() {
-  // const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
 
-  // const value = (_value as { value: number })?.value;
-  // const status = (_status as { status: 'loading' | 'loaded' })?.status;
+  const ONYXKEYS = {
+    COUNTER: 'counter',
+  };
 
-  // const incrementCount = () => {
-  //   if (status !== 'loaded') { return; }
-  //   Onyx.set(ONYXKEYS.COUNTER, { value: value + 1 });
-  // };
+  useEffect(() => {
+    Onyx.init({
+      keys: ONYXKEYS,
+    });
+  }, []);
 
-  // const resetCount = () => {
-  //   if (status !== 'loaded') { return; }
-  //   Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
-  // };
+  const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
+
+  const value = (_value as { value: number })?.value;
+  const status = (_status as { status: 'loading' | 'loaded' })?.status;
+
+  const incrementCount = () => {
+    if (status !== 'loaded') { return; }
+    Onyx.set(ONYXKEYS.COUNTER, { value: value + 1 });
+  };
+
+  const resetCount = () => {
+    if (status !== 'loaded') { return; }
+    Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
+  };
 
   return (
     <PaperProvider>
       <View style={styles.phoneContainer}>
         <View style={styles.container}>
-          {/* {status === 'loading' ? (<Text style={styles.loadingText}>Loading counter...</Text>) : ( */}
-          {/* <> */}
-          <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
-          <View style={styles.counterContainer}>
-            <MaterialIcons name="timer" size={32} color="#FFA500" />
-            {/* <Text style={styles.counterText}>Counter Value: {value}</Text> */}
-          </View>
+          {status === 'loading' ? (<Text style={styles.loadingText}>Loading counter...</Text>) : (
+            <>
+              <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
+              <View style={styles.counterContainer}>
+                <MaterialIcons name="timer" size={32} color="#FFA500" />
+                <Text style={styles.counterText}>Counter Value: {value}</Text>
+              </View>
 
-          <View style={styles.buttonContainer}>
-            <Button
-              mode="contained"
-              // onPress={incrementCount}
-              icon={() => <MaterialIcons name="add" size={24} color="white" />}
-              style={[styles.button, { backgroundColor: '#1ca658' }]}
-            >
-              Increment
-            </Button>
-            <Button
-              mode="contained"
-              // onPress={resetCount}
-              icon={() => <MaterialIcons name="refresh" size={24} color="white" />}
-              style={[styles.button, { backgroundColor: '#3F8EFF' }]}
-            >
-              Reset
-            </Button>
-          </View>
-          {/* </> */}
-          {/* )} */}
+              <View style={styles.buttonContainer}>
+                <Button
+                  mode="contained"
+                  onPress={incrementCount}
+                  icon={() => <MaterialIcons name="add" size={24} color="white" />}
+                  style={[styles.button, { backgroundColor: '#1ca658' }]}
+                >
+                  Increment
+                </Button>
+                <Button
+                  mode="contained"
+                  onPress={resetCount}
+                  icon={() => <MaterialIcons name="refresh" size={24} color="white" />}
+                  style={[styles.button, { backgroundColor: '#3F8EFF' }]}
+                >
+                  Reset
+                </Button>
+              </View>
+            </>
+          )}
         </View>
       </View>
     </PaperProvider>
