@@ -14,6 +14,7 @@ export default function App() {
     Onyx.init({
       keys: ONYXKEYS,
     });
+    Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
   }, []);
 
   const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
