@@ -2,7 +2,7 @@
   "expo": {
     "name": "ShopScan",
     "slug": "shopscana-app",
-    "version": "1.0.0",
+    "version": "1.1.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -51,8 +51,6 @@
     "updates": {
       "url": "https://u.expo.dev/03fafb2c-5f6e-4e4c-9dbb-a615a9e693c0"
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    }
+    "runtimeVersion": "1.1.3"
   }
 }
