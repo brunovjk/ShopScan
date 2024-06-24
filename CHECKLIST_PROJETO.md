@@ -216,10 +216,10 @@
 
 **1. Configuração do Projeto:**
 
-* [ ] Criar um novo projeto React Native com Typescript.
+* [x] Criar um novo projeto React Native com Typescript.
 * [ ] Instalar as dependências necessárias:
-    * [ ] `react-native-paper`.
-    * [ ] `react-native-vector-icons`.
+    * [x] `react-native-paper`.
+    * [x] `react-native-vector-icons`.
     * [ ] `react-native-onyx`.
     * [ ] `react-native-camera`.
 * [ ] Configurar o ambiente de desenvolvimento (Android Studio e Xcode).
