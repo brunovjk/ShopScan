@@ -10,14 +10,14 @@ export default function App() {
     COUNTER: 'counter',
   };
 
-  useEffect(() => {
+  const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
+
+    useEffect(() => {
     Onyx.init({
       keys: ONYXKEYS,
     });
-    Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
+    // Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
   }, []);
-
-  const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
 
   const value = (_value as { value: number })?.value;
   const status = (_status as { status: 'loading' | 'loaded' })?.status;

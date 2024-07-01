@@ -28,17 +28,6 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "minSdkVersion": 23
-          }
-        }
-      ]
-    ],
     "experiments": {
       "typedRoutes": true
     },
