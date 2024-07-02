@@ -1,68 +1,62 @@
-import React, { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { Provider as PaperProvider, Button, Text } from 'react-native-paper';
 import Onyx, { useOnyx } from 'react-native-onyx';
-import { MaterialIcons } from '@expo/vector-icons';
+import { useCameraDevice, useCameraPermission } from 'react-native-vision-camera';
+
+type ListPhotoType = {
+  id: number,
+  uri: string
+}
 
 export default function App() {
+  const device = useCameraDevice('back');
+  const { hasPermission, requestPermission } = useCameraPermission()
 
-  const ONYXKEYS = {
-    COUNTER: 'counter',
-  };
+  const ONYXKEYS = { LIST_PHOTO: 'list_photo' };
 
-  const [_value, _status] = useOnyx(ONYXKEYS.COUNTER);
+  const [_photos, _status] = useOnyx(ONYXKEYS.LIST_PHOTO);
 
-    useEffect(() => {
-    Onyx.init({
-      keys: ONYXKEYS,
-    });
-    // Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
-  }, []);
-
-  const value = (_value as { value: number })?.value;
+  const photos = (_photos as { status: ListPhotoType[] })?.status;
   const status = (_status as { status: 'loading' | 'loaded' })?.status;
 
-  const incrementCount = () => {
-    if (status !== 'loaded') { return; }
-    Onyx.set(ONYXKEYS.COUNTER, { value: value + 1 });
-  };
+  useEffect(() => {
+    Onyx.init({ keys: ONYXKEYS });
+  }, []);
 
-  const resetCount = () => {
-    if (status !== 'loaded') { return; }
-    Onyx.set(ONYXKEYS.COUNTER, { value: 0 });
+  const takePhoto = async () => {
+    // const photo = await Camera.takePhoto();
+    // const newPhotos = photos ? [...photos, photo] : [photo];
+    // Onyx.set(ONYXKEYS.LIST_PHOTO, newPhotos);
+    console.log('Say XXxxxxx');
   };
 
   return (
     <PaperProvider>
       <View style={styles.phoneContainer}>
         <View style={styles.container}>
-          {status === 'loading' ? (<Text style={styles.loadingText}>Loading counter...</Text>) : (
-            <>
-              <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
-              <View style={styles.counterContainer}>
-                <MaterialIcons name="timer" size={32} color="#FFA500" />
-                <Text style={styles.counterText}>Counter Value: {value}</Text>
-              </View>
-
-              <View style={styles.buttonContainer}>
-                <Button
-                  mode="contained"
-                  onPress={incrementCount}
-                  icon={() => <MaterialIcons name="add" size={24} color="white" />}
-                  style={[styles.button, { backgroundColor: '#1ca658' }]}
-                >
-                  Increment
-                </Button>
-                <Button
-                  mode="contained"
-                  onPress={resetCount}
-                  icon={() => <MaterialIcons name="refresh" size={24} color="white" />}
-                  style={[styles.button, { backgroundColor: '#3F8EFF' }]}
-                >
-                  Reset
-                </Button>
-              </View>
-            </>
+          <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
+          {status === 'loading' ? (
+            <Text style={styles.loadingText}>Loading photos...</Text>
+          ) : photos && photos.length > 0 ? (
+            <ScrollView>
+              {photos.map((photo, index) => (
+                <Text key={index}>Photo {index + 1}: {photo.uri}</Text>
+              ))}
+            </ScrollView>
+          ) : (
+            <Text style={styles.loadingText}>You don't have any photos yet.</Text>
+          )}
+          {device == null ? (
+            <Text style={styles.loadingText}>Access a real device with a camera to use our App.</Text>
+          ) : (
+            <Button
+              mode="contained"
+              onPress={hasPermission ? takePhoto : requestPermission}
+              style={styles.button}
+            >
+              {hasPermission ? 'Take Photo' : 'Permit Camera'}
+            </Button>
           )}
         </View>
       </View>
@@ -94,19 +88,6 @@ const styles = StyleSheet.create({
   loadingText: {
     fontSize: 18,
     textAlign: 'center',
-  },
-  counterContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  counterText: {
-    fontSize: 24,
-    marginLeft: 10,
-  },
-  buttonContainer: {
-    gap: 16,
-    flexDirection: 'column',
   },
   button: {
     borderRadius: 25,
