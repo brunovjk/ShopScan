@@ -221,8 +221,8 @@
     * [x] `react-native-paper`.
     * [x] `react-native-vector-icons`.
     * [x] `react-native-onyx`.
-    * [ ] `react-native-camera`.
-* [ ] Configurar o ambiente de desenvolvimento (Android Studio e Xcode).
+    * [ ] `react-native-vision-camera`.
+* [ ] Configurar o ambiente de desenvolvimento (Android Studio).
 
 **2. Telas:**
 * **Tela de Bem-vinda:**
