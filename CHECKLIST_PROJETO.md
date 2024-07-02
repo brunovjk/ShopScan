@@ -220,7 +220,7 @@
 * [ ] Instalar as dependências necessárias:
     * [x] `react-native-paper`.
     * [x] `react-native-vector-icons`.
-    * [ ] `react-native-onyx`.
+    * [x] `react-native-onyx`.
     * [ ] `react-native-camera`.
 * [ ] Configurar o ambiente de desenvolvimento (Android Studio e Xcode).
 
