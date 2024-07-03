@@ -1,34 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
-import { Provider as PaperProvider, Button, Text } from 'react-native-paper';
-import Onyx, { useOnyx } from 'react-native-onyx';
-import { useCameraDevice, useCameraPermission } from 'react-native-vision-camera';
+import React, { useEffect, useRef, useState } from "react";
+import { View, StyleSheet, ScrollView } from "react-native";
+import { Provider as PaperProvider, Button, Text } from "react-native-paper";
+import Onyx, { useOnyx } from "react-native-onyx";
+import {
+  Camera as CameraComponent,
+  useCameraDevice,
+  useCameraPermission,
+} from "react-native-vision-camera";
 
 type ListPhotoType = {
-  id: number,
-  uri: string
-}
+  id: number;
+  uri: string;
+};
 
 export default function App() {
-  const device = useCameraDevice('back');
-  const { hasPermission, requestPermission } = useCameraPermission()
+  // Onyx
 
-  const ONYXKEYS = { LIST_PHOTO: 'list_photo' };
+  const ONYXKEYS = { LIST_PHOTO: "list_photo" };
 
   const [_photos, _status] = useOnyx(ONYXKEYS.LIST_PHOTO);
 
   const photos = (_photos as { status: ListPhotoType[] })?.status;
-  const status = (_status as { status: 'loading' | 'loaded' })?.status;
+  const status = (_status as { status: "loading" | "loaded" })?.status;
 
   useEffect(() => {
     Onyx.init({ keys: ONYXKEYS });
   }, []);
 
+  // Camera
+
+  const device = useCameraDevice("back");
+  const camera = useRef<CameraComponent>(null);
+
+  const { hasPermission, requestPermission } = useCameraPermission();
+  const [openCamera, setOpenCamera] = useState(false);
+
+  const permitCamera = async () => {
+    requestPermission();
+  };
+
   const takePhoto = async () => {
-    // const photo = await Camera.takePhoto();
-    // const newPhotos = photos ? [...photos, photo] : [photo];
-    // Onyx.set(ONYXKEYS.LIST_PHOTO, newPhotos);
-    console.log('Say XXxxxxx');
+    if (camera) {
+      const photo = await camera?.current?.takePhoto();
+      console.log(photo);
+    } else {
+      console.log("No Camera");
+    }
   };
 
   return (
@@ -36,27 +53,56 @@ export default function App() {
       <View style={styles.phoneContainer}>
         <View style={styles.container}>
           <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
-          {status === 'loading' ? (
+
+          {status === "loading" ? (
             <Text style={styles.loadingText}>Loading photos...</Text>
           ) : photos && photos.length > 0 ? (
             <ScrollView>
               {photos.map((photo, index) => (
-                <Text key={index}>Photo {index + 1}: {photo.uri}</Text>
+                <Text key={index}>
+                  Photo {index + 1}: {photo.uri}
+                </Text>
               ))}
             </ScrollView>
           ) : (
-            <Text style={styles.loadingText}>You don't have any photos yet.</Text>
+            <Text style={styles.loadingText}>
+              You don't have any photos yet.
+            </Text>
           )}
-          {device == null ? (
-            <Text style={styles.loadingText}>Access a real device with a camera to use our App.</Text>
+
+          {openCamera && device ? (
+            <>
+              <CameraComponent
+                ref={camera}
+                style={StyleSheet.absoluteFill}
+                device={device}
+                isActive={true}
+                photo={true}
+              />
+              <Button onPress={takePhoto}>Take Photo</Button>
+            </>
           ) : (
-            <Button
-              mode="contained"
-              onPress={hasPermission ? takePhoto : requestPermission}
-              style={styles.button}
-            >
-              {hasPermission ? 'Take Photo' : 'Permit Camera'}
-            </Button>
+            <>
+              {device ? (
+                <Button
+                  mode="contained"
+                  onPress={
+                    hasPermission
+                      ? () => {
+                          setOpenCamera(true);
+                        }
+                      : permitCamera
+                  }
+                  style={styles.button}
+                >
+                  {hasPermission ? "Open Camera" : "Permit Camera"}
+                </Button>
+              ) : (
+                <Text style={styles.loadingText}>
+                  Access a real device with a camera to use our App.
+                </Text>
+              )}
+            </>
           )}
         </View>
       </View>
@@ -70,24 +116,24 @@ const styles = StyleSheet.create({
     maxWidth: 640,
     maxHeight: 480,
     padding: 48,
-    margin: 'auto',
+    margin: "auto",
     borderWidth: 1,
     borderRadius: 16,
-    borderColor: 'lightgray',
+    borderColor: "lightgray",
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     gap: 32,
     paddingHorizontal: 20,
   },
   welcomeText: {
     fontSize: 36,
-    textAlign: 'center',
+    textAlign: "center",
   },
   loadingText: {
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: "center",
   },
   button: {
     borderRadius: 25,
