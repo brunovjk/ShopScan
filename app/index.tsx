@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, Image } from "react-native";
 import { Provider as PaperProvider, Button, Text } from "react-native-paper";
 import Onyx, { useOnyx } from "react-native-onyx";
 import {
@@ -14,18 +14,22 @@ type ListPhotoType = {
 };
 
 export default function App() {
+  const CONST = {
+    NO_PATH: "no-path",
+  };
+
   // Onyx
+  
+  useEffect(() => {
+    Onyx.init({ keys: ONYXKEYS });
+  }, []);
 
   const ONYXKEYS = { LIST_PHOTO: "list_photo" };
 
   const [_photos, _status] = useOnyx(ONYXKEYS.LIST_PHOTO);
 
-  const photos = (_photos as { status: ListPhotoType[] })?.status;
+  const photos = (_photos as { value: ListPhotoType[] })?.value;
   const status = (_status as { status: "loading" | "loaded" })?.status;
-
-  useEffect(() => {
-    Onyx.init({ keys: ONYXKEYS });
-  }, []);
 
   // Camera
 
@@ -42,10 +46,21 @@ export default function App() {
   const takePhoto = async () => {
     if (camera) {
       const photo = await camera?.current?.takePhoto();
-      console.log(photo);
+      const newPhoto: ListPhotoType = {
+        id: photos ? photos.length + 1 : 1,
+        uri: `file://${photo?.path ?? CONST.NO_PATH}`,
+      };
+      const updatedPhotos = photos ? [...photos, newPhoto] : [newPhoto];
+      Onyx.set(ONYXKEYS.LIST_PHOTO, { value: updatedPhotos });
+      setOpenCamera(false);
     } else {
       console.log("No Camera");
+      setOpenCamera(false);
     }
+  };
+
+  const clearList = async () => {
+    Onyx.set(ONYXKEYS.LIST_PHOTO, { value: [] });
   };
 
   return (
@@ -59,9 +74,14 @@ export default function App() {
           ) : photos && photos.length > 0 ? (
             <ScrollView>
               {photos.map((photo, index) => (
-                <Text key={index}>
-                  Photo {index + 1}: {photo.uri}
-                </Text>
+                <View key={index} style={styles.photoContainer}>
+                  <Text>Photo {index + 1}:</Text>
+                  {photo.uri === CONST.NO_PATH ? (
+                    <Text>{CONST.NO_PATH}</Text>
+                  ) : (
+                    <Image source={{ uri: photo.uri }} style={styles.photo} />
+                  )}
+                </View>
               ))}
             </ScrollView>
           ) : (
@@ -104,6 +124,9 @@ export default function App() {
               )}
             </>
           )}
+          {!openCamera && photos && photos.length > 0 && (
+            <Button onPress={clearList}>Clear List</Button>
+          )}
         </View>
       </View>
     </PaperProvider>
@@ -114,7 +137,6 @@ const styles = StyleSheet.create({
   phoneContainer: {
     flex: 1,
     maxWidth: 640,
-    maxHeight: 480,
     padding: 48,
     margin: "auto",
     borderWidth: 1,
@@ -138,5 +160,14 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 25,
     paddingHorizontal: 20,
+  },
+  photoContainer: {
+    marginVertical: 10,
+    alignItems: "center",
+  },
+  photo: {
+    width: 300,
+    height: 400,
+    resizeMode: "contain",
   },
 });
