@@ -4,12 +4,9 @@ import { Button } from "react-native-paper";
 import Onyx from "react-native-onyx";
 import { useOnyxContext } from "../contexts/OnyxContext";
 import { styles } from "../styles";
+import CONST from "../contexts/CONST";
 
-const CONST = {
-  NO_PATH: "no-path",
-};
-
-const ONYXKEYS = { LIST_PHOTO: "list_photo" };
+const ONYXKEYS = { LIST_PHOTO: CONST.LIST_PHOTO };
 
 export const PhotoList: React.FC = () => {
   const { photos, status } = useOnyxContext();
@@ -20,7 +17,7 @@ export const PhotoList: React.FC = () => {
 
   return (
     <ScrollView style={styles.scrollContainer}>
-      {status === "loading" ? (
+      {status === CONST.STATUS.LOADED ? (
         <Text style={styles.loadingText}>Loading photos...</Text>
       ) : photos && photos.length > 0 ? (
         <>

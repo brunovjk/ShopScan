@@ -9,11 +9,9 @@ import { Button } from "react-native-paper";
 import Onyx from "react-native-onyx";
 import { useOnyxContext } from "../contexts/OnyxContext";
 import { styles } from "./../styles";
+import CONST from "../contexts/CONST";
 
-const ONYXKEYS = { LIST_PHOTO: "list_photo" };
-const CONST = {
-  NO_PATH: "no-path",
-};
+const ONYXKEYS = { LIST_PHOTO: CONST.LIST_PHOTO };
 
 export const CameraComponent: React.FC = () => {
   const { photos } = useOnyxContext();
