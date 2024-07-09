@@ -17,7 +17,7 @@ export const PhotoList: React.FC = () => {
 
   return (
     <ScrollView style={styles.scrollContainer}>
-      {status === CONST.STATUS.LOADED ? (
+      {status === CONST.STATUS.LOADING ? (
         <Text style={styles.loadingText}>Loading photos...</Text>
       ) : photos && photos.length > 0 ? (
         <>
