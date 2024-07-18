@@ -4,12 +4,22 @@
 
 ## Instalação
 
+   Instal `cmake`
+
+   ```bash
+   choco install cmake
+   ```
+
    ```bash
    npm install
    ```
 
    ```bash
-    npx expo start
+    npm run android
+   ```
+   or
+   ```bash
+    npm run start
    ```
    
 ## Uso
