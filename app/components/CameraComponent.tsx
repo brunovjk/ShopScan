@@ -30,7 +30,6 @@ export const CameraComponent: React.FC = () => {
         blocks.forEach((block: TextBlock) => {
           console.log('[-----------------------------------------------------------]');
           console.log('[TextRecognition] - Block text:', block.text);
-          console.log('[TextRecognition] - Block frame:', block.frame);
           console.log('[-----------------------------------------------------------]');
         });
     } catch (error) {
