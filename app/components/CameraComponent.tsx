@@ -11,6 +11,9 @@ import { useOnyxContext } from "../contexts/OnyxContext";
 import { styles } from "./../styles";
 import CONST from "../contexts/CONST";
 
+import '@tensorflow/tfjs-react-native';
+import * as cocoSsd from '@tensorflow-models/coco-ssd';
+
 const ONYXKEYS = { LIST_PHOTO: CONST.LIST_PHOTO };
 
 export const CameraComponent: React.FC = () => {
@@ -19,6 +22,17 @@ export const CameraComponent: React.FC = () => {
   const camera = useRef<CameraLib>(null);
   const { hasPermission, requestPermission } = useCameraPermission();
   const [openCamera, setOpenCamera] = useState(false);
+
+  const detectObjects = async (img: any) => {  
+    // Load the model.
+    const model = await cocoSsd.load();
+  
+    // Classify the image.
+    const predictions = await model.detect(img);
+  
+    console.log('Predictions: ');
+    console.log(predictions);
+  };
 
   const permitCamera = async () => {
     requestPermission();
@@ -32,6 +46,7 @@ export const CameraComponent: React.FC = () => {
         id: photos ? photos.length + 1 : 1,
         uri: imagePath,
       };
+      detectObjects(imagePath);
       const updatedPhotos = photos ? [...photos, newPhoto] : [newPhoto];
       Onyx.set(ONYXKEYS.LIST_PHOTO, { value: updatedPhotos });
       setOpenCamera(false);
