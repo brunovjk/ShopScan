@@ -11,8 +11,6 @@ import { useOnyxContext } from "../contexts/OnyxContext";
 import { styles } from "./../styles";
 import CONST from "../contexts/CONST";
 
-import TextRecognition, { TextBlock } from '@react-native-ml-kit/text-recognition';
-
 const ONYXKEYS = { LIST_PHOTO: CONST.LIST_PHOTO };
 
 export const CameraComponent: React.FC = () => {
@@ -22,21 +20,6 @@ export const CameraComponent: React.FC = () => {
   const { hasPermission, requestPermission } = useCameraPermission();
   const [openCamera, setOpenCamera] = useState(false);
 
-  const recognizeText = async (imagePath: string) => {
-    console.log('[TextRecognition] - Path:', imagePath);
-    try {
-        const result = await TextRecognition.recognize(imagePath);
-        const { blocks } = result;
-        blocks.forEach((block: TextBlock) => {
-          console.log('[-----------------------------------------------------------]');
-          console.log('[TextRecognition] - Block text:', block.text);
-          console.log('[-----------------------------------------------------------]');
-        });
-    } catch (error) {
-        console.error('[TextRecognition] - Error recognizing text:', error);
-    }
-};
-
   const permitCamera = async () => {
     requestPermission();
   };
@@ -44,11 +27,11 @@ export const CameraComponent: React.FC = () => {
   const takePhoto = async () => {
     if (camera.current) {
       const photo = await camera.current.takePhoto();
+      const imagePath = `file://${photo?.path ?? CONST.NO_PATH}`;
       const newPhoto = {
         id: photos ? photos.length + 1 : 1,
-        uri: `file://${photo?.path ?? CONST.NO_PATH}`,
+        uri: imagePath,
       };
-      recognizeText(`file://${photo?.path ?? CONST.NO_PATH}`);
       const updatedPhotos = photos ? [...photos, newPhoto] : [newPhoto];
       Onyx.set(ONYXKEYS.LIST_PHOTO, { value: updatedPhotos });
       setOpenCamera(false);
