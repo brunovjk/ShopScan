@@ -222,6 +222,7 @@
     * [x] `react-native-vector-icons`.
     * [x] `react-native-onyx`.
     * [x] `react-native-vision-camera`.
+    * [ ] TensorFlow
 * [ ] Configurar o ambiente de desenvolvimento (Android Studio).
 
 **2. Telas:**
