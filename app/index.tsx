@@ -1,28 +1,28 @@
 import React from "react";
-import { View, Platform, ScrollView } from "react-native";
+import { View } from "react-native";
 import { Provider as PaperProvider, Text } from "react-native-paper";
 import { OnyxProvider } from "./contexts/OnyxContext";
 import { CameraComponent } from "./components/CameraComponent";
+import { DetectImages } from "./components/DetectImages";
 import { PhotoList } from "./components/PhotoList";
 import { styles } from "./styles";
+
+const Component: React.FC = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
+      <PhotoList />
+      <CameraComponent />
+      <DetectImages />
+    </View>
+  );
+};
 
 export default function App() {
   return (
     <PaperProvider>
       <OnyxProvider>
-        <View style={styles.container}>
-          <Text style={styles.welcomeText}>Welcome to ShopScan!!!</Text>
-          {Platform.OS === "android" ? (
-            <>
-              <PhotoList />
-              <CameraComponent />
-            </>
-          ) : (
-            <Text style={styles.loadingText}>
-              This app is only supported on Android.
-            </Text>
-          )}
-        </View>
+        <Component />
       </OnyxProvider>
     </PaperProvider>
   );

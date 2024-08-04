@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import {
   Camera as CameraLib,
   useCameraDevice,
   useCameraPermission,
 } from "react-native-vision-camera";
-import { Button } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 import Onyx from "react-native-onyx";
 import { useOnyxContext } from "../contexts/OnyxContext";
 import { styles } from "./../styles";
@@ -13,7 +13,7 @@ import CONST from "../contexts/CONST";
 
 const ONYXKEYS = { LIST_PHOTO: CONST.LIST_PHOTO };
 
-export const CameraComponent: React.FC = () => {
+const Component: React.FC = () => {
   const { photos } = useOnyxContext();
   const device = useCameraDevice("back");
   const camera = useRef<CameraLib>(null);
@@ -66,5 +66,19 @@ export const CameraComponent: React.FC = () => {
     >
       {hasPermission ? "Open Camera" : "Permit Camera"}
     </Button>
+  );
+};
+
+export const CameraComponent: React.FC = () => {
+  return (
+    <>
+      {Platform.OS === "android" || Platform.OS === "ios" ? (
+        <Component />
+      ) : (
+        <Text style={styles.loadingText}>
+          Camera only supported on Android and iOS.
+        </Text>
+      )}
+    </>
   );
 };
