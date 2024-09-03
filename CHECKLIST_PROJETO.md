@@ -223,6 +223,8 @@
     * [x] `react-native-onyx`.
     * [x] `react-native-vision-camera`.
     * [ ] TensorFlow - tensorflow-models/mobilenet.
+          - Crie um modelo para identificar etiquetas de preço entre uma foto de prateleira.
+          - Identifique o nome do produto, peso/unidade e preço.
 * [ ] Configurar o ambiente de desenvolvimento (Android Studio).
 
 **2. Telas:**
