@@ -1,63 +1,64 @@
 # ShopScan
 
-**Descrição**: ShopScan é Seu Companheiro Inteligente de Compras projetado para trazer **Precisão** à sua Compra. Diga adeus às Discrepâncias de Preços no Caixa! Este aplicativo intuitivo permite que você capture facilmente etiquetas de preço usando reconhecimento de fotos. Crie e gerencie sua lista de compras de forma contínua, garantindo a precisão do custo de cada item. Na hora de pagar, o ShopScan exibe o total a pagar, garantindo que você pague exatamente o que espera. Boas compras! 🛒💳
+This repository contains the initial plan for building the **ShopScan** shopping list app from scratch. The app's goal is to scan product price tags, extract the item name and price automatically, manage a shopping list, and show a running total.
 
-## Instalação
+## 1. Core Features
 
-   Instal `cmake`
+1. **Item Capture via Camera**
+   - Provide a camera interface for photographing the product’s price tag.
+   - Detect a clear region of the photo for the price tag and offer guidance.
+   - Optionally save the raw photo for later review.
 
-   ```bash
-   choco install cmake
-   ```
+2. **Automatic Text Extraction**
+   - Use OCR to read the product name and price from the captured image.
+   - Libraries: Google ML Kit or Tesseract (with wrappers for the chosen framework).
+   - Parse recognized text to locate the price and extract the product name.
 
-   ```bash
-   npm install
-   ```
+3. **Manual Confirmation**
+   - After OCR, show an editable form so the user can confirm or correct the product name, quantity, and price.
+   - Display the captured image for reference.
 
-   ```bash
-    npm run android
-   ```
-   or
-   ```bash
-    npm run start
-   ```
-   
-## Uso
+4. **Shopping List Management**
+   - Store each product item (name, quantity, unit price, photo) in a list.
+   - Provide a UI list view showing all items with checkboxes to mark as purchased.
+   - Support manual item entry or edits when needed.
 
-ShopScan é projetado para ser minimalista, simples e intuitivo. Os usuários podem capturar fotos de etiquetas de preço, adicionar produtos à lista, remover produtos e visualizar o valor total a pagar. Instruções detalhadas de uso serão fornecidas aqui assim que o aplicativo for desenvolvido.
+5. **Total Calculation**
+   - Maintain a running total (quantity × price for each item).
+   - Update the total whenever items are added, edited, or removed.
 
-## Armazenamento Local e Gerenciamento de Estado
+6. **Local Storage and Offline Use**
+   - Store all data locally (e.g., SQLite) so the app works offline.
+   - Persist photos alongside item data and load the stored list on startup.
 
-ShopScan será totalmente offline, acessível apenas por meio de um link de download compartilhado com os usuários. Mais tarde, à medida que a base de usuários e contribuidores crescer, podemos considerar hospedar o aplicativo na Play Store, Apple Store e plataformas de armazenamento online.
+## 2. Suggested Technology Stack
 
-ShopScan utiliza `react-native-onyx` para armazenamento local e gerenciamento de estado. Onyx armazena e recupera dados de armazenamento persistente, permitindo que o aplicativo funcione offline. Os dados são armazenados como pares de chave/valor, com a capacidade de se inscrever em mudanças nos dados e publicar eventos de mudança.
+- **Mobile Framework**: React Native or Flutter.
+- **OCR**: Google ML Kit Text Recognition or Tesseract.
+- **Storage**: SQLite or similar local database.
 
-Para obter mais informações sobre `react-native-onyx`, consulte sua [documentação](https://github.com/Expensify/react-native-onyx).
+## 3. High-Level Architecture
 
-## Diretrizes para Contribuição
+1. **Camera Module** – captures photos and passes them to OCR.
+2. **OCR/Parsing Module** – extracts text and parses the price and product name.
+3. **Data Layer** – local database for item records (name, price, quantity, image path, purchased flag).
+4. **UI Layer** – list screen, add/scan screen, and item detail screen.
+5. **Total Calculation** – derived from stored items and updated whenever data changes.
 
-Agradecemos as contribuições da comunidade para aprimorar o ShopScan. Para contribuir, siga estas diretrizes:
-- Faça um fork do repositório e crie um novo branch para sua contribuição.
-- Faça suas alterações e garanta que elas estejam de acordo com os padrões de codificação do projeto.
-- Teste suas alterações minuciosamente.
-- Envie uma pull request detalhando as alterações que você fez e o problema que elas abordam.
+## 4. Step-by-Step Development Plan
 
-Para obter mais informações sobre contribuição, consulte o arquivo CONTRIBUTING.md no repositório.
+1. Set up the mobile project (React Native or Flutter).
+2. Create basic screens (list, camera/scan, item detail).
+3. Implement local storage with SQLite or another local database.
+4. Integrate camera and OCR to extract price and item name.
+5. Add item management logic: add, edit, delete items.
+6. Calculate and display the total.
+7. Test OCR accuracy and offline functionality.
 
-## Licença
+## 5. Future Enhancements (Optional After MVP)
 
-ShopScan está licenciado sob a [Licença MIT](LICENSE).
+- Price history or analytics per item.
+- Synchronization with cloud storage or accounts.
+- Sharing or exporting the shopping list.
+- Multi-language support.
 
-## Planos Futuros
-
-No futuro, planejamos adicionar recursos adicionais ao ShopScan.
-
-Suas contribuições e feedback são valiosos para moldar o futuro do ShopScan.
-
-## Nota Multilíngue | Multilingual Note:
-
-- Usuários/Colaboradores:
-Neste momento a documentação do ShopScan está disponível apenas em português. Nosso foco é resolver um problema comun de compras no Brasil. Agradecemos sua compreensão e agradecemos qualquer feedback enquanto continuamos a desenvolver o projeto.
-
-- Users/Contributors:
-At this time, ShopScan's documentation is available only in Portuguese. Our focus is on addressing a common shopping issues in Brazil. We appreciate your understanding and welcome any feedback as we continue to develop the project.
