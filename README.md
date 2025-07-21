@@ -36,7 +36,8 @@ O objetivo do aplicativo é escanear etiquetas de preço de produtos, extrair o 
 
 ## Plano de Ação para implementar o ShopScan
 
-1. Configuração inicial do projeto  
+**1. Configuração inicial do projeto**
+
 - Criar um novo projeto em Flutter.  
 - Adicionar as dependências principais:  
   - `camera` (captura de fotos)  
@@ -44,32 +45,39 @@ O objetivo do aplicativo é escanear etiquetas de preço de produtos, extrair o 
   - `sqflite` e `path_provider` (armazenamento local)  
 - Configurar permissões de câmera e acesso a arquivos.  
 
-2. Tela de captura de fotos  
+**2. Tela de captura de fotos**
+
 - Implementar interface para abrir a câmera e tirar foto do produto.  
 - Salvar a imagem localmente para referência futura.  
 
-3. Processamento OCR  
+**3. Processamento OCR**
+
 - Usar o `google_ml_kit` para extrair texto da imagem e identificar o nome e o preço.  
 - Criar função que detecta automaticamente o valor do preço entre os textos reconhecidos.  
 
-4. Confirmação manual  
+**4. Confirmação manual**
+
 - Exibir o resultado do OCR em uma tela de revisão.  
 - Campos editáveis para nome, quantidade e preço.  
 - Botão para confirmar e salvar ou cancelar.  
 
-5. Gerenciamento da lista de compras  
+**5. Gerenciamento da lista de compras**
+
 - Criar uma tabela SQLite para armazenar itens com os campos: id, nome, quantidade, preço e caminho da foto.  
 - Desenvolver uma tela de lista com checkbox de “comprado” e opções de edição ou remoção.  
 
-6. Cálculo do total acumulado  
+**6. Cálculo do total acumulado**
+
 - Calcular `quantidade × preço` de cada item e exibir o somatório.  
 - Atualizar automaticamente ao adicionar, editar ou remover itens.  
 
-7. Armazenamento local e operação offline  
+**7. Armazenamento local e operação offline**
+
 - Garantir que todas as fotos e dados fiquem salvos no SQLite, permitindo uso sem conexão.  
 - Implementar controle de erros para lidar com leitura e gravação local.  
 
-8. Fluxo adicional  
+**8. Fluxo adicional**
+   
 - Possibilitar cadastro manual de itens (em vez de usar a câmera), com os mesmos campos.  
 - Organizar o código com repositório de dados e camadas de UI para facilitar manutenção.  
 
