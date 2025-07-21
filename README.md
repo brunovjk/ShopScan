@@ -55,10 +55,3 @@ This repository contains the initial plan for building the **ShopScan** shopping
 6. Calculate and display the total.
 7. Test OCR accuracy and offline functionality.
 
-## 5. Future Enhancements (Optional After MVP)
-
-- Price history or analytics per item.
-- Synchronization with cloud storage or accounts.
-- Sharing or exporting the shopping list.
-- Multi-language support.
-
