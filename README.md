@@ -1,57 +1,35 @@
 # ShopScan
 
-This repository contains the initial plan for building the **ShopScan** shopping list app from scratch. The app's goal is to scan product price tags, extract the item name and price automatically, manage a shopping list, and show a running total.
+O objetivo do aplicativo é escanear etiquetas de preço de produtos, extrair o nome e o preço do item automaticamente, gerenciar uma lista de compras e exibir um total acumulado.
 
-## 1. Core Features
+## Principais Recursos
 
-1. **Item Capture via Camera**
-   - Provide a camera interface for photographing the product’s price tag.
-   - Detect a clear region of the photo for the price tag and offer guidance.
-   - Optionally save the raw photo for later review.
+**1. Captura de Câmera**
 
-2. **Automatic Text Extraction**
-   - Use OCR to read the product name and price from the captured image.
-   - Libraries: Google ML Kit or Tesseract (with wrappers for the chosen framework).
-   - Parse recognized text to locate the price and extract the product name.
+- Tire uma foto do produto junto com sua etiqueta de preço dentro do aplicativo.
+- Salve cada foto para referência futura.
 
-3. **Manual Confirmation**
-   - After OCR, show an editable form so the user can confirm or correct the product name, quantity, and price.
-   - Display the captured image for reference.
+**2. OCR para Extrair Texto**
 
-4. **Shopping List Management**
-   - Store each product item (name, quantity, unit price, photo) in a list.
-   - Provide a UI list view showing all items with checkboxes to mark as purchased.
-   - Support manual item entry or edits when needed.
+- Use uma biblioteca de OCR (Google ML Kit) para ler o nome e o preço do produto na imagem.
+- Identifique o preço automaticamente.
 
-5. **Total Calculation**
-   - Maintain a running total (quantity × price for each item).
-   - Update the total whenever items are added, edited, or removed.
+**3. Confirmação Manual**
 
-6. **Local Storage and Offline Use**
-   - Store all data locally (e.g., SQLite) so the app works offline.
-   - Persist photos alongside item data and load the stored list on startup.
+- Exiba o resultado do OCR para que o usuário possa corrigir o nome ou o preço, se necessário.
+- Permita edições de quantidade e preço nesta etapa.
 
-## 2. Suggested Technology Stack
+**4. Gerenciamento de Lista de Compras**
 
-- **Mobile Framework**: React Native or Flutter.
-- **OCR**: Google ML Kit Text Recognition or Tesseract.
-- **Storage**: SQLite or similar local database.
+- Armazene itens (nome, quantidade, preço, foto) localmente.
+- Exiba uma lista de verificação para os itens comprados.
+- Suporte para entrada manual ou edições para qualquer item.
 
-## 3. High-Level Architecture
+**5. Total Acumulado**
 
-1. **Camera Module** – captures photos and passes them to OCR.
-2. **OCR/Parsing Module** – extracts text and parses the price and product name.
-3. **Data Layer** – local database for item records (name, price, quantity, image path, purchased flag).
-4. **UI Layer** – list screen, add/scan screen, and item detail screen.
-5. **Total Calculation** – derived from stored items and updated whenever data changes.
+- Calcule o custo total como quantidade × preço para cada item.
+- Atualize o total sempre que itens forem adicionados, editados ou removidos.
 
-## 4. Step-by-Step Development Plan
+**6. Armazenamento Local Offline**
 
-1. Set up the mobile project (React Native or Flutter).
-2. Create basic screens (list, camera/scan, item detail).
-3. Implement local storage with SQLite or another local database.
-4. Integrate camera and OCR to extract price and item name.
-5. Add item management logic: add, edit, delete items.
-6. Calculate and display the total.
-7. Test OCR accuracy and offline functionality.
-
+- Mantenha dados e fotos em um banco de dados local (SQLite) para que o aplicativo funcione sem acesso à internet.
