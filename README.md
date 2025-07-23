@@ -48,7 +48,7 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 ## 4. Plano de Desenvolvimento Passo a Passo
 
 - [x] Configurar o projeto mobile (Flutter).
-- [ ] Criar telas básicas (lista, câmera/escanear, detalhes do item).
+- [x] Criar telas básicas (lista, câmera/escanear, detalhes do item).
 - [ ] Implementar armazenamento local com SQLite.
 - [ ] Integrar câmera e OCR para extrair preço e nome do item.
 - [ ] Adicionar lógica de gerenciamento de itens: adicionar, editar, deletar itens.
