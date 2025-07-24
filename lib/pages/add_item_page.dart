@@ -13,13 +13,11 @@ class _AddItemPageState extends State<AddItemPage> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _quantityController = TextEditingController(text: '1');
-  final _priceController = TextEditingController(text: '0');
 
   @override
   void dispose() {
     _nameController.dispose();
     _quantityController.dispose();
-    _priceController.dispose();
     super.dispose();
   }
 
@@ -28,7 +26,6 @@ class _AddItemPageState extends State<AddItemPage> {
       final item = Item(
         name: _nameController.text,
         quantity: int.tryParse(_quantityController.text) ?? 1,
-        price: double.tryParse(_priceController.text) ?? 0,
       );
       await ItemsDatabase.instance.create(item);
       if (context.mounted) {
@@ -57,11 +54,6 @@ class _AddItemPageState extends State<AddItemPage> {
                 controller: _quantityController,
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(labelText: 'Quantidade'),
-              ),
-              TextFormField(
-                controller: _priceController,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: 'Preço'),
               ),
               const SizedBox(height: 20),
               ElevatedButton(

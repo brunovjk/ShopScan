@@ -42,10 +42,20 @@ class ItemsListPageState extends State<ItemsListPage> {
       itemBuilder: (context, index) {
         final item = _items[index];
         return ListTile(
-          title: Text(item.name),
+          leading: Checkbox(
+            value: item.purchased,
+            onChanged: (value) async {
+              final updated = item.copyWith(purchased: value ?? false);
+              await ItemsDatabase.instance.update(updated);
+              setState(() {
+                _items[index] = updated;
+              });
+            },
+          ),
+          title: Text('${item.name} (${item.quantity})'),
           trailing: const Icon(Icons.chevron_right),
           onTap: () {
-            Navigator.pushNamed(context, '/details', arguments: item.name);
+            Navigator.pushNamed(context, '/details', arguments: item);
           },
         );
       },

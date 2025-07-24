@@ -21,7 +21,8 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 4. **Gerenciamento da Lista de Compras**
    - Armazenar cada item de produto (nome, quantidade, preço unitário, foto) em uma lista.
    - Fornecer uma visualização em lista com checkboxes para marcar como comprado.
-   - Suportar entrada ou edição manual de itens quando necessário.
+   - Suportar entrada manual de itens (nome e quantidade) pela tela de lista.
+   - Preço pode ser adicionado ou editado depois na tela de detalhes do item.
    - Ícone "+" na tela de lista para cadastrar novos produtos.
 
 5. **Cálculo do Total**
