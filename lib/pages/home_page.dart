@@ -12,15 +12,30 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
-  final _pages = const [ItemsListPage(), ScanPage()];
+  final GlobalKey<_ItemsListPageState> _listKey = GlobalKey<_ItemsListPageState>();
+  late final List<Widget> _pages;
 
   final _titles = const ['Lista', 'Escanear'];
+
+  @override
+  void initState() {
+    super.initState();
+    _pages = [ItemsListPage(key: _listKey), const ScanPage()];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(_titles[_currentIndex])),
       body: _pages[_currentIndex],
+      floatingActionButton: _currentIndex == 0
+          ? FloatingActionButton(
+              onPressed: () {
+                _listKey.currentState?.showAddItemDialog(context);
+              },
+              child: const Icon(Icons.add),
+            )
+          : null,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {

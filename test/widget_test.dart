@@ -4,12 +4,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shopscan/main.dart';
 
 void main() {
-  testWidgets('Lista de itens exibida', (WidgetTester tester) async {
+  testWidgets('Mensagem de lista vazia exibida', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('Produto 1'), findsOneWidget);
+    expect(find.text('Lista vazia, adicione ou escaneie um produto.'),
+        findsOneWidget);
     expect(find.text('Tela de Câmera (em breve)'), findsNothing);
+
+    expect(find.byIcon(Icons.add), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Adicionar Item'), findsOneWidget);
+    await tester.tap(find.text('Cancelar'));
+    await tester.pumpAndSettle();
 
     await tester.tap(find.byIcon(Icons.camera_alt));
     await tester.pumpAndSettle();
