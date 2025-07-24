@@ -21,7 +21,10 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 4. **Gerenciamento da Lista de Compras**
    - Armazenar cada item de produto (nome, quantidade, preço unitário, foto) em uma lista.
    - Fornecer uma visualização em lista com checkboxes para marcar como comprado.
-   - Suportar entrada ou edição manual de itens quando necessário.
+   - Suportar entrada manual de itens (nome e quantidade) pela tela de lista.
+   - Nome, quantidade e preço podem ser editados depois na tela de detalhes do item.
+   - A tela de detalhes exibe o subtotal (`quantidade × preço`).
+   - Ícone "+" na tela de lista para cadastrar novos produtos.
 
 5. **Cálculo do Total**
    - Manter um total acumulado (`quantidade × preço` para cada item).
@@ -50,6 +53,7 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 - [x] Configurar o projeto mobile (Flutter).
 - [x] Criar telas básicas (lista, câmera/escanear, detalhes do item).
 - [x] Implementar armazenamento local com SQLite.
+- [x] Permitir inserir itens manualmente na lista.
 - [ ] Integrar câmera e OCR para extrair preço e nome do item.
 - [ ] Adicionar lógica de gerenciamento de itens: adicionar, editar, deletar itens.
 - [ ] Calcular e exibir o total.

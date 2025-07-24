@@ -6,10 +6,10 @@ class ItemsListPage extends StatefulWidget {
   const ItemsListPage({super.key});
 
   @override
-  State<ItemsListPage> createState() => _ItemsListPageState();
+  State<ItemsListPage> createState() => ItemsListPageState();
 }
 
-class _ItemsListPageState extends State<ItemsListPage> {
+class ItemsListPageState extends State<ItemsListPage> {
   List<Item> _items = [];
 
   @override
@@ -25,6 +25,10 @@ class _ItemsListPageState extends State<ItemsListPage> {
     });
   }
 
+  Future<void> refresh() async {
+    await _loadItems();
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_items.isEmpty) {
@@ -38,10 +42,29 @@ class _ItemsListPageState extends State<ItemsListPage> {
       itemBuilder: (context, index) {
         final item = _items[index];
         return ListTile(
-          title: Text(item.name),
+          leading: Checkbox(
+            value: item.purchased,
+            onChanged: (value) async {
+              final updated = item.copyWith(purchased: value ?? false);
+              await ItemsDatabase.instance.update(updated);
+              setState(() {
+                _items[index] = updated;
+              });
+            },
+          ),
+          title: Text('${item.name} (${item.quantity})'),
           trailing: const Icon(Icons.chevron_right),
-          onTap: () {
-            Navigator.pushNamed(context, '/details', arguments: item.name);
+          onTap: () async {
+            final result = await Navigator.pushNamed(
+              context,
+              '/details',
+              arguments: item,
+            );
+            if (result is Item) {
+              setState(() {
+                _items[index] = result;
+              });
+            }
           },
         );
       },
