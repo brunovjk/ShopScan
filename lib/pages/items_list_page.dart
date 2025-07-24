@@ -54,8 +54,17 @@ class ItemsListPageState extends State<ItemsListPage> {
           ),
           title: Text('${item.name} (${item.quantity})'),
           trailing: const Icon(Icons.chevron_right),
-          onTap: () {
-            Navigator.pushNamed(context, '/details', arguments: item);
+          onTap: () async {
+            final result = await Navigator.pushNamed(
+              context,
+              '/details',
+              arguments: item,
+            );
+            if (result is Item) {
+              setState(() {
+                _items[index] = result;
+              });
+            }
           },
         );
       },

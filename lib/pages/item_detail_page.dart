@@ -12,24 +12,46 @@ class ItemDetailPage extends StatefulWidget {
 }
 
 class _ItemDetailPageState extends State<ItemDetailPage> {
+  late final TextEditingController _nameController;
+  late final TextEditingController _quantityController;
   late final TextEditingController _priceController;
 
   @override
   void initState() {
     super.initState();
+    _nameController = TextEditingController(text: widget.item.name);
+    _quantityController =
+        TextEditingController(text: widget.item.quantity.toString());
     _priceController = TextEditingController(
         text: widget.item.price > 0 ? widget.item.price.toString() : '');
+    _priceController.addListener(_updateSubtotal);
+    _quantityController.addListener(_updateSubtotal);
   }
 
   @override
   void dispose() {
+    _nameController.dispose();
+    _quantityController.dispose();
     _priceController.dispose();
     super.dispose();
   }
 
-  Future<void> _save() async {
+  void _updateSubtotal() {
+    setState(() {});
+  }
+
+  double get _subtotal {
     final price = double.tryParse(_priceController.text) ?? 0;
-    final updated = widget.item.copyWith(price: price);
+    final qty = int.tryParse(_quantityController.text) ?? 0;
+    return price * qty;
+  }
+
+  Future<void> _save() async {
+    final name = _nameController.text;
+    final quantity = int.tryParse(_quantityController.text) ?? 1;
+    final price = double.tryParse(_priceController.text) ?? 0;
+    final updated = widget.item
+        .copyWith(name: name, quantity: quantity, price: price);
     await ItemsDatabase.instance.update(updated);
     if (context.mounted) {
       Navigator.pop(context, updated);
@@ -38,7 +60,6 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final item = widget.item;
     return Scaffold(
       appBar: AppBar(title: const Text('Detalhes do Item')),
       body: Padding(
@@ -46,15 +67,25 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Item: ${item.name}',
-                style: Theme.of(context).textTheme.titleMedium),
+            TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(labelText: 'Nome'),
+            ),
             const SizedBox(height: 8),
-            Text('Quantidade: ${item.quantity}'),
+            TextField(
+              controller: _quantityController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(labelText: 'Quantidade'),
+              onChanged: (_) => _updateSubtotal(),
+            ),
+            const SizedBox(height: 8),
             TextField(
               controller: _priceController,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(labelText: 'Preço'),
             ),
+            const SizedBox(height: 8),
+            Text('Subtotal: ${_subtotal.toStringAsFixed(2)}'),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _save,

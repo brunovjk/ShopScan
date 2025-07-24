@@ -22,7 +22,8 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
    - Armazenar cada item de produto (nome, quantidade, preço unitário, foto) em uma lista.
    - Fornecer uma visualização em lista com checkboxes para marcar como comprado.
    - Suportar entrada manual de itens (nome e quantidade) pela tela de lista.
-   - Preço pode ser adicionado ou editado depois na tela de detalhes do item.
+   - Nome, quantidade e preço podem ser editados depois na tela de detalhes do item.
+   - A tela de detalhes exibe o subtotal (`quantidade × preço`).
    - Ícone "+" na tela de lista para cadastrar novos produtos.
 
 5. **Cálculo do Total**
