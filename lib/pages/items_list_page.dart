@@ -6,10 +6,10 @@ class ItemsListPage extends StatefulWidget {
   const ItemsListPage({super.key});
 
   @override
-  State<ItemsListPage> createState() => _ItemsListPageState();
+  State<ItemsListPage> createState() => ItemsListPageState();
 }
 
-class _ItemsListPageState extends State<ItemsListPage> {
+class ItemsListPageState extends State<ItemsListPage> {
   List<Item> _items = [];
 
   @override
@@ -23,6 +23,10 @@ class _ItemsListPageState extends State<ItemsListPage> {
     setState(() {
       _items = items;
     });
+  }
+
+  Future<void> refresh() async {
+    await _loadItems();
   }
 
   @override

@@ -22,6 +22,7 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
    - Armazenar cada item de produto (nome, quantidade, preço unitário, foto) em uma lista.
    - Fornecer uma visualização em lista com checkboxes para marcar como comprado.
    - Suportar entrada ou edição manual de itens quando necessário.
+   - Ícone "+" na tela de lista para cadastrar novos produtos.
 
 5. **Cálculo do Total**
    - Manter um total acumulado (`quantidade × preço` para cada item).
@@ -50,6 +51,7 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 - [x] Configurar o projeto mobile (Flutter).
 - [x] Criar telas básicas (lista, câmera/escanear, detalhes do item).
 - [x] Implementar armazenamento local com SQLite.
+- [x] Permitir inserir itens manualmente na lista.
 - [ ] Integrar câmera e OCR para extrair preço e nome do item.
 - [ ] Adicionar lógica de gerenciamento de itens: adicionar, editar, deletar itens.
 - [ ] Calcular e exibir o total.

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/item_detail_page.dart';
+import 'pages/add_item_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
           final itemName = ModalRoute.of(context)!.settings.arguments as String;
           return ItemDetailPage(itemName: itemName);
         },
+        '/add': (_) => const AddItemPage(),
       },
     );
   }
