@@ -49,7 +49,7 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 
 - [x] Configurar o projeto mobile (Flutter).
 - [x] Criar telas básicas (lista, câmera/escanear, detalhes do item).
-- [ ] Implementar armazenamento local com SQLite.
+- [x] Implementar armazenamento local com SQLite.
 - [ ] Integrar câmera e OCR para extrair preço e nome do item.
 - [ ] Adicionar lógica de gerenciamento de itens: adicionar, editar, deletar itens.
 - [ ] Calcular e exibir o total.
