@@ -54,7 +54,7 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 - [x] Criar telas básicas (lista, câmera/escanear, detalhes do item).
 - [x] Implementar armazenamento local com SQLite.
 - [x] Permitir inserir itens manualmente na lista.
-- [ ] Integrar câmera e OCR para extrair preço e nome do item.
+- [x] Integrar câmera e OCR para extrair preço e nome do item.
 - [ ] Adicionar lógica de gerenciamento de itens: adicionar, editar, deletar itens.
 - [ ] Calcular e exibir o total.
 - [ ] Testar a precisão do OCR e funcionalidade offline.

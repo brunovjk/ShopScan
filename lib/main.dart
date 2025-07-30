@@ -25,7 +25,14 @@ class MyApp extends StatelessWidget {
           final item = ModalRoute.of(context)!.settings.arguments as Item;
           return ItemDetailPage(item: item);
         },
-        '/add': (_) => const AddItemPage(),
+        '/add': (context) {
+          final args =
+              ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>?;
+          return AddItemPage(
+            initialName: args?['name'] as String?,
+            initialPrice: args?['price'] as double?,
+          );
+        },
       },
     );
   }
