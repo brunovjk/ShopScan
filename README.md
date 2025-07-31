@@ -48,13 +48,11 @@ A função princiapl do app é escanear etiquetas de preços de produtos, extrai
 4. **Camada de UI** – tela de lista, tela de adicionar/escanear, e tela de detalhes do item.
 5. **Cálculo de Total** – derivado dos itens armazenados e atualizado sempre que os dados mudam.
 
-## 4. Plano de Desenvolvimento Passo a Passo
+## 4. MVP
 
 - [x] Configurar o projeto mobile (Flutter).
 - [x] Criar telas básicas (lista, câmera/escanear, detalhes do item).
 - [x] Implementar armazenamento local com SQLite.
 - [x] Permitir inserir itens manualmente na lista.
 - [x] Integrar câmera e OCR para extrair preço e nome do item.
-- [ ] Adicionar lógica de gerenciamento de itens: adicionar, editar, deletar itens.
-- [ ] Calcular e exibir o total.
-- [ ] Testar a precisão do OCR e funcionalidade offline.
+- [x] Testar a precisão do OCR e funcionalidade offline.
