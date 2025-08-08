@@ -53,7 +53,24 @@ class ItemsListPageState extends State<ItemsListPage> {
             },
           ),
           title: Text('${item.name} (${item.quantity})'),
-          trailing: const Icon(Icons.chevron_right),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.delete),
+                onPressed: () async {
+                  final id = item.id;
+                  if (id != null) {
+                    await ItemsDatabase.instance.delete(id);
+                    setState(() {
+                      _items.removeAt(index);
+                    });
+                  }
+                },
+              ),
+              const Icon(Icons.chevron_right),
+            ],
+          ),
           onTap: () async {
             final result = await Navigator.pushNamed(
               context,
