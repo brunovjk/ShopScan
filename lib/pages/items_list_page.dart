@@ -11,6 +11,7 @@ class ItemsListPage extends StatefulWidget {
 
 class ItemsListPageState extends State<ItemsListPage> {
   List<Item> _items = [];
+  double _total = 0;
 
   @override
   void initState() {
@@ -22,11 +23,18 @@ class ItemsListPageState extends State<ItemsListPage> {
     final items = await ItemsDatabase.instance.readAll();
     setState(() {
       _items = items;
+      _calculateTotal();
     });
   }
 
   Future<void> refresh() async {
     await _loadItems();
+  }
+
+  void _calculateTotal() {
+    _total = _items
+        .where((item) => item.purchased)
+        .fold(0.0, (sum, item) => sum + item.price * item.quantity);
   }
 
   @override
@@ -37,54 +45,69 @@ class ItemsListPageState extends State<ItemsListPage> {
       );
     }
 
-    return ListView.builder(
-      itemCount: _items.length,
-      itemBuilder: (context, index) {
-        final item = _items[index];
-        return ListTile(
-          leading: Checkbox(
-            value: item.purchased,
-            onChanged: (value) async {
-              final updated = item.copyWith(purchased: value ?? false);
-              await ItemsDatabase.instance.update(updated);
-              setState(() {
-                _items[index] = updated;
-              });
-            },
-          ),
-          title: Text('${item.name} (${item.quantity})'),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.delete),
-                onPressed: () async {
-                  final id = item.id;
-                  if (id != null) {
-                    await ItemsDatabase.instance.delete(id);
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: _items.length,
+            itemBuilder: (context, index) {
+              final item = _items[index];
+              return ListTile(
+                leading: Checkbox(
+                  value: item.purchased,
+                  onChanged: (value) async {
+                    final updated = item.copyWith(purchased: value ?? false);
+                    await ItemsDatabase.instance.update(updated);
                     setState(() {
-                      _items.removeAt(index);
+                      _items[index] = updated;
+                      _calculateTotal();
+                    });
+                  },
+                ),
+                title: Text('${item.name} (${item.quantity})'),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text((item.price * item.quantity).toStringAsFixed(2)),
+                    const SizedBox(width: 8),
+                    IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () async {
+                        final id = item.id;
+                        if (id != null) {
+                          await ItemsDatabase.instance.delete(id);
+                          setState(() {
+                            _items.removeAt(index);
+                            _calculateTotal();
+                          });
+                        }
+                      },
+                    ),
+                    const Icon(Icons.chevron_right),
+                  ],
+                ),
+                onTap: () async {
+                  final result = await Navigator.pushNamed(
+                    context,
+                    '/details',
+                    arguments: item,
+                  );
+                  if (result is Item) {
+                    setState(() {
+                      _items[index] = result;
+                      _calculateTotal();
                     });
                   }
                 },
-              ),
-              const Icon(Icons.chevron_right),
-            ],
+              );
+            },
           ),
-          onTap: () async {
-            final result = await Navigator.pushNamed(
-              context,
-              '/details',
-              arguments: item,
-            );
-            if (result is Item) {
-              setState(() {
-                _items[index] = result;
-              });
-            }
-          },
-        );
-      },
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text('Total: ${_total.toStringAsFixed(2)}'),
+        ),
+      ],
     );
   }
 }
