@@ -68,6 +68,8 @@ class ItemsListPageState extends State<ItemsListPage> {
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    Text((item.price * item.quantity).toStringAsFixed(2)),
+                    const SizedBox(width: 8),
                     IconButton(
                       icon: const Icon(Icons.delete),
                       onPressed: () async {
